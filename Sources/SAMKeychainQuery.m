@@ -243,6 +243,10 @@
 	}
 #endif
 
+	if (@available(macOS 10.15, macCatalyst 13.0, tvOS 13.0, watchOS 6.0, *)) {
+		[dictionary setObject:@YES forKey:(__bridge id)(kSecUseDataProtectionKeychain)];
+	}
+
 	return dictionary;
 }
 
