@@ -22,6 +22,7 @@ NSString *const kSAMKeychainWhereKey = @"svce";
 	static CFTypeRef SAMKeychainAccessibilityType = NULL;
 #endif
 
+
 @implementation SAMKeychain
 
 + (nullable NSString *)passwordForService:(NSString *)serviceName account:(NSString *)account {
@@ -126,5 +127,14 @@ NSString *const kSAMKeychainWhereKey = @"svce";
 	SAMKeychainAccessibilityType = accessibilityType;
 }
 #endif
+
+static BOOL _useDataProtectionKeychain = NO;
++ (BOOL)useDataProtectionKeychain {
+	return _useDataProtectionKeychain;
+}
+
++ (void)setUseDataProtectionKeychain:(BOOL)useDataProtectionKeychain {
+	_useDataProtectionKeychain = useDataProtectionKeychain;
+}
 
 @end

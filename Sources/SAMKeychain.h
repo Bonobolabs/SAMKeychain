@@ -196,6 +196,12 @@ extern NSString *const kSAMKeychainWhereKey;
 + (void)setAccessibilityType:(CFTypeRef)accessibilityType;
 #endif
 
+
+/// Indicates whether keychain queries should use the kSecUseDataProtectionKeychain key
+/// Mainly implemented for macOS shared keychain support
+/// (added by AS, 7-Mar-2022)
+@property(class, nonatomic, assign) BOOL useDataProtectionKeychain;
+
 @end
 
 NS_ASSUME_NONNULL_END
