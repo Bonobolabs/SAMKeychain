@@ -246,7 +246,7 @@
 	/// Use kSecUseDataProtectionKeychain key if needed
 	/// Mainly implemented for macOS shared keychain support
 	/// (added by AS, 7-Mar-2022)
-	if (@available(macOS 10.15, macCatalyst 13.0, tvOS 13.0, watchOS 6.0, *)) {
+	if (@available(iOS 13.0, macOS 10.15, macCatalyst 13.0, tvOS 13.0, watchOS 6.0, *)) {
 		if (SAMKeychain.useDataProtectionKeychain) {
 			[dictionary setObject:@YES forKey:(__bridge id)(kSecUseDataProtectionKeychain)];
 		}
